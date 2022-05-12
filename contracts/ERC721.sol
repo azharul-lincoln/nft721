@@ -11,7 +11,7 @@ contract ERC721 {
     mapping(uint256 => address) private _tokenApprovals;
 
     event ApprovalForAll(address indexed _owoner, address indexed operator, bool _approved);
-    event Approval(address _owoner, address _approved, uint256 _tokenId);
+    event Approval(address indexed _owoner, address indexed _approved, uint256 _tokenId);
 
     // Returns the number of NFT's assigned to an owoner
     function balanceOf(address owoner) public view returns(uint256){
@@ -40,10 +40,15 @@ contract ERC721 {
     //Updates an approves address for NFT
     function approve(address to, uint256 tokenId) public {
         address owoner = owonerOf(tokenId);
+        require(msg.sender == owoner || isApprovedForAll( owoner, msg.sender), "msg.sender is not owoner or approved oparetor" );
         _tokenApprovals[tokenId] = to;
         emit Approval(msg.sender, to, tokenId);
     }
 
-    // function getApproved();
+    /// Gets the approved address for a single NFT
+    function getApproved( uint256 tokenId) public view returns (address) {
+        require( _owoners[tokenId] != address(0) , "token id does not exits" );
+        return _tokenApprovals[tokenId];
+    }
 }
 
