@@ -12,6 +12,8 @@ contract ERC721 {
 
     event ApprovalForAll(address indexed _owoner, address indexed operator, bool _approved);
     event Approval(address indexed _owoner, address indexed _approved, uint256 _tokenId);
+    event Transfer( address indexed _from, address indexed _to, uint256 indexed _tokenId );
+
 
     // Returns the number of NFT's assigned to an owoner
     function balanceOf(address owoner) public view returns(uint256){
@@ -29,7 +31,8 @@ contract ERC721 {
     /// Enable or disable an oparetor to manage all of msg.senders assets
     function setApprovalForAll( address operator, bool approved) public {
         _operatorApprovals[msg.sender][operator] = approved;
-        emit ApprovalForAll(msg.sender, operator, approved);
+        
+        emit ApprovalForAll( msg.sender, operator, approved );
     }
 
     /// Check if an address is an oparetor for another address
@@ -49,6 +52,43 @@ contract ERC721 {
     function getApproved( uint256 tokenId) public view returns (address) {
         require( _owoners[tokenId] != address(0) , "token id does not exits" );
         return _tokenApprovals[tokenId];
+    }
+
+    function transferFrom( address from, address to, uint256 tokenId ) public {
+        address owoner = owonerOf(tokenId);
+
+        require( 
+            msg.sender == owoner ||
+            isApprovedForAll( owoner, msg.sender) || 
+            getApproved(tokenId) == msg.sender, 
+            "MSG.SENDER is not alowed for the transfer"
+        );
+
+        require( 
+            from == owoner,
+            "invalid owenr of the NFT"
+        );
+
+        require( 
+            to == address(0),
+            "invalid address to transfar the NFT"
+        );
+
+        require( 
+            _owoners[tokenId] != address(0),
+            "tokenId is not a valid NFT"
+        );
+        
+        
+        //removing all approval for the NFT that have given by the old owoner
+        approve(address(0), tokenId);
+
+        _balances[from] -= 1;
+        _balances[to] += 1;
+        _owoners[tokenId] = to;
+
+        emit Transfer( from, to, tokenId);
+
     }
 }
 
