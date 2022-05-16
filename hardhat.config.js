@@ -23,5 +23,9 @@ module.exports = {
       url: process.env.MUMBAI_RPC,
       account: [process.env.PRIVATE_KEY],
     },
+    rinkeby: {
+      url: process.env.RINKBE_URL,
+      account: [process.env.PRIVATE_KEY_RINKBE],
+    },
   },
 };

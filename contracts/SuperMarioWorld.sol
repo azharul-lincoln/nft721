@@ -8,6 +8,10 @@ import "./ERC721.sol";
  * https://vanity-eth.tk/ public and private key for testing
  * public_key: 0x7Da46A30119546Fb453281fb4004Ad2A8dDBCD03
  * private_key: edd7f4be23e4d132e3721c6127e167c508664c238065836bbd9c1667777385dd
+ *
+ * Ropsten Pub_K: 0x07F40064a260b0715f815Eb58837Fee32D79e79C
+ * Ropsten Private_K: e61f5ad4cccfd9dd92eccde5bec836077fae9e20d4ae3f5676b82ed4aed46d6f
+
  */
 
 contract SuperMarioWorld is ERC721 {
