@@ -24,8 +24,13 @@ module.exports = {
       // url: process.env.MUMBAI_RPC,
       // accounts: [process.env.PRIVATE_KEY],
       url: `https://matic-mumbai.chainstacklabs.com`,
+      // accounts: [
+      //mac
+      //   `63f7c35a541128d7877571780dd749613214afefb892af9377831b746aaafcfb`,
+      // ],
+      // minted at 0x42eaF1F211Ae14b8Aa5E7578b7EDa66B374a7cc9
       accounts: [
-        `63f7c35a541128d7877571780dd749613214afefb892af9377831b746aaafcfb`,
+        "edd7f4be23e4d132e3721c6127e167c508664c238065836bbd9c1667777385dd",
       ],
     },
     ropsten: {

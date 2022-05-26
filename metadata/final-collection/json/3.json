@@ -1,7 +1,7 @@
 {
-    "name" : "Mario",
-    "description": "Mario is a short, pudgy, Italian plumber who sets out to rescue Princess Peach from the evil villain Bowser",
-    "image" : "https://ipfs.io/ipfs/QmY8VNgpqnXT4kUaZMpGo3AQvwkeHpwymPs6QpvaQ8miXx",
+    "name" : "Yoshi",
+    "description": "Yoshi is a green dinosaur that uses his long, sticky tongue to eat his enemies.",
+    "image" : "https://ipfs.io/ipfs/QmXPdhZunk5psvpvWCHpg99G8TRSyPpzn46p5DjJbzrS4h/3.jpg",
     "attributes": [
         {
             "trait_type": "Strength",
@@ -20,7 +20,7 @@
         },
         {
             "trait_type": "Intelligence",
-            "value": 6,
+            "value": 4,
             "max_value": 10
         }
     ]

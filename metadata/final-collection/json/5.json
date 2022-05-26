@@ -1,16 +1,16 @@
 {
-    "name" : "Mario",
-    "description": "Mario is a short, pudgy, Italian plumber who sets out to rescue Princess Peach from the evil villain Bowser",
-    "image" : "https://ipfs.io/ipfs/QmY8VNgpqnXT4kUaZMpGo3AQvwkeHpwymPs6QpvaQ8miXx",
+    "name" : "Mario Gold",
+    "description": "Mario Gold is the badass version of Mario. He was trained by ninjas, wolves and Bitcoin HODLers on how to defeat his enemys with speed, strength and Bitcoin",
+    "image" : "https://ipfs.io/ipfs/QmXPdhZunk5psvpvWCHpg99G8TRSyPpzn46p5DjJbzrS4h/5.jpg",
     "attributes": [
         {
             "trait_type": "Strength",
-            "value": 7,
+            "value": 10,
             "max_value": 10
         },
         {
             "trait_type": "Speed",
-            "value": 9,
+            "value": 10,
             "max_value": 10
         },
         {
@@ -20,7 +20,7 @@
         },
         {
             "trait_type": "Intelligence",
-            "value": 6,
+            "value": 10,
             "max_value": 10
         }
     ]
